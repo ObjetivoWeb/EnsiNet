@@ -1,0 +1,14 @@
+title: EnsiNet
+description: > 
+  Trabalho de Conclusão de Série do Colégio Objetivo Baixada.
+baseurl: "/EnsiNet"
+url: "http://objetivoweb.github.io"
+
+markdown: kramdown
+
+gems:
+  - jekyll-coffeescript
+
+exclude:
+  - gulpfile.js
+  - README.md

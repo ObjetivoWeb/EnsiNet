@@ -1,0 +1,72 @@
+
+%form-basis
+	padding: .5em
+	font-size: $base-font-size
+	border: 1px solid $grey-color-light
+	border-radius: 4px
+	background-color: #fff
+	transition: .3s ease-in-out
+	outline: none
+	&:focus
+		border-color: $brand-color
+
+label
+	display: inline-block
+	width: 10em
+	font-size: .75em
+	text-transform: uppercase
+	line-height: 1
+
+input
+	&[type='text'], 
+	&[type='password'], 
+	&[type='search'], 
+	&[type='tel'], 
+	&[type='url'], 
+	&[type='email'], 
+	&[type='datetime'], 
+	&[type='date'], 
+	&[type='time'], 
+	&[type='month'], 
+	&[type='week'], 
+	&[type='datetime-local'], 
+	&[type='number'], 
+	&[type='range']
+		@extend %form-basis
+		width: 100%
+
+textarea
+	@extend %form-basis
+	font-family: $base-font-family
+	width: 100%
+
+::-webkit-input-placeholder
+	color: $grey-color
+\:-moz-placeholder
+	color: $grey-color
+::-moz-placeholder
+	color: $grey-color
+\:-ms-input-placeholder
+	color: $grey-color
+\:focus::-webkit-input-placeholder
+	-webkit-transition: text-indent 0.5s 0.5s ease
+	transition: text-indent 0.5s 0.5s ease
+	text-indent: -100%
+	opacity: 1
+
+.honeypot
+	display: none
+
+button
+	@extend %form-basis
+	padding-left: 1.5em
+	padding-right: 1.5em
+	text-transform: uppercase
+	background-color: transparent
+	border-color: $brand-color
+	color: $brand-color
+
+	&:hover, &:focus
+		background-color: $brand-color
+		color: #fff
+
