@@ -1,0 +1,16 @@
+
+- date: 2017-01-11
+  author: Fulaninho
+  action: mudou
+  type: a capa do projeto
+  content: imagem-2.jpg
+- date: 2017-01-12
+  author: Mariana
+  action: adicionou
+  type: uma postagem
+  content: "O yeti é um animal de hábitos noturnos que vive nos andes"
+- date: 2017-01-12
+  author: Aninha
+  action: adicionou
+  type: um vídeo
+  content: https://youtu.be/ifJnm7WmoN0

@@ -1,6 +1,7 @@
 
 %form-basis
 	padding: .5em
+	margin: 0
 	font-size: $base-font-size
 	border: 1px solid $grey-color-light
 	border-radius: 4px
@@ -10,12 +11,13 @@
 	&:focus
 		border-color: $brand-color
 
+fieldset
+	@extend %form-basis
+
 label
-	display: inline-block
-	width: 10em
+	display: block
 	font-size: .75em
 	text-transform: uppercase
-	line-height: 1
 
 input
 	&[type='text'], 
@@ -59,14 +61,15 @@ textarea
 
 button
 	@extend %form-basis
-	padding-left: 1.5em
-	padding-right: 1.5em
+	padding-left: 2em
+	padding-right: 2em
 	text-transform: uppercase
 	background-color: transparent
 	border-color: $brand-color
-	color: $brand-color
+	background-color: $brand-color
+	color: #fff
+	text-shadow: 0 -1px 1px $grey-color-dark
 
 	&:hover, &:focus
-		background-color: $brand-color
-		color: #fff
+		box-shadow: 0 3px 5px rgba($brand-color, .7)
 

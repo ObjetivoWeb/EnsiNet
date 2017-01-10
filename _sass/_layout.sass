@@ -73,16 +73,39 @@
 
 .page-heading
     font-size: 20px
+    line-height: 1.2
 
 .post-list
     margin-left: 0
     list-style: none
     > li
-        margin-bottom: $spacing-unit
+        margin-top: $spacing-unit / 2
+        margin-bottom: $spacing-unit / 2
+        padding: $spacing-unit / 2
+        background-color: #fff
+        border: 1px solid $grey-color-light
+        border-radius: 4px
+        &:hover
+            border-color: $brand-color
 
 .post-meta
     font-size: $small-font-size
     color: $grey-color
+    line-height: 1
+
+.post-actions
+    font-size: $small-font-size
+    a
+        display: inline-block
+        padding: 5px 15px
+        border-radius: 4px
+        color: $text-color
+        &:hover, &:focus
+            background-color: $grey-color-light
+
+.post-input
+    .post-actions
+        margin-bottom: $spacing-unit / 2
 
 .post-link
     display: block

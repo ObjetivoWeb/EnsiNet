@@ -1,0 +1,50 @@
+---
+layout: page
+title: Acesso à minha conta
+menu-title: Login
+permalink: /login/
+---
+
+<div class="home page-content">
+
+  <div class="wrapper large" data-grid="spacing">
+    <section data-cell="3of4">
+      <header>
+        <form action="/postar/" method="post">
+          <h1 class="page-heading">Adicionar postagem:</h1>
+          <fieldset class="post-input">
+            <label for="post-content" class="post-actions">
+              <a href="#">Imagem</a>
+              <a href="#">Vídeo</a>
+              <a href="#">Áudio</a>
+            </label>
+            <textarea name="post-content" cols="30" rows="4" placeholder="Digite um conteúdo"></textarea>
+          </fieldset>
+        </form>
+      </header>
+
+      <h1 class="page-heading">Últimas atualizações</h1>
+      
+      <ul class="post-list">
+        {% for post in site.data.posts %}
+          <li>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <p><strong>{{ post.author }}</strong> {{ post.action }} {{ post.type }}</p>
+            <p class="post-meta">{{ post.content }}</p>
+            <footer class="post-actions" data-grid="end">
+              <a data-cell="shrink" href="#">Comentar</a>
+              <a data-cell="shrink" href="#">Encaminhar</a>
+            </footer>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+    </section>
+    <aside data-cell="1of4">
+      {% include login-menu.html %}
+    </aside>
+  </div>
+
+</div>

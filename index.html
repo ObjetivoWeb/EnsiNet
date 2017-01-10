@@ -2,22 +2,26 @@
 layout: default
 ---
 
-<div class="home">
+<div class="home page-content">
 
-  <h1 class="page-heading">Posts</h1>
+  <div class="wrapper large" data-grid="spacing">
+    <section data-cell="3of4">
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <h1 class="page-heading">Bem vindo a {{ site.title }}!</h1>
+      
+      <p>{{ site.description }}</p>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    </section>
+    <aside data-cell="1of4">
+      <form action="{{ site.baseurl }}/login/" method="post">
+        <fieldset>
+          <legend>Faça login:</legend>
+          <p><label for="mail">E-mail</label><input type="email" name="mail"></p>
+          <p><label for="senha">Senha</label><input type="password" name="senha"></p>
+          <p><button>Entrar</button></p>
+        </fieldset>
+      </form>
+    </aside>
+  </div>
 
 </div>

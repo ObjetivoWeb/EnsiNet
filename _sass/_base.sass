@@ -12,10 +12,15 @@ body
     -o-font-feature-settings: "kern" 1
     font-feature-settings: "kern" 1
     font-kerning: normal
+    box-sizing: border-box
+    *
+        box-sizing: inherit
 
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, %vertical-rhythm
     margin-top: $spacing-unit / 2
     margin-bottom: $spacing-unit / 2
+    .post-content > &
+        @extend .wrapper
 
 img
     max-width: 100%
@@ -43,7 +48,7 @@ h1, h2, h3, h4, h5, h6
 a
     color: $brand-color
     text-decoration: none
-    &:hover
+    &:hover, &:focus
         color: $text-color
         text-decoration: underline
 
@@ -81,6 +86,8 @@ pre
     padding-right: $spacing-unit
     padding-left: $spacing-unit
     @extend %clearfix
+    &.large
+        max-width: $large-view
     +media-query($on-laptop)
         padding-right: $spacing-unit / 2
         padding-left: $spacing-unit / 2
