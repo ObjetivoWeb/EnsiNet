@@ -1,6 +1,11 @@
 title: EnsiNet
 description: > 
-  Trabalho de Conclusão de Série do Colégio Objetivo Baixada.
+  Esta é a nossa plataforma de publicação do Trabalho de Conclusão
+  de Série (TCS) do Colégio Objetivo Baixada. Com o objetivo de
+  estimular o estudo e a pesquisa, identificar estudantes talentosos
+  e estimulá-los ao aprimoramento contínuo das ciências e tecnologias,
+  desenvolver o pensamento autônomo e crítico e estimular o trabalho
+  investigativo e colaborativo.
 baseurl: "/EnsiNet"
 url: "http://objetivoweb.github.io"
 

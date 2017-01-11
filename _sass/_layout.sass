@@ -1,6 +1,18 @@
+.hero, %negativo
+    background-color: $grey-color-dark
+    color: $grey-color
+    &.brand-color
+        background-color: $brand-color
+        color: $grey-color-light
+    a
+        color: inherit
+        text-decoration: none
+        &:hover, &:focus
+            color: #fff
+            outline-color: #00fa9a
+
 .site-header
-    border-top: 5px solid $grey-color-dark
-    border-bottom: 1px solid $grey-color-light
+    @extend %negativo
     min-height: 56px
     // Positioning context for the mobile navigation icon
     position: relative
@@ -12,7 +24,6 @@
     letter-spacing: -1px
     margin-bottom: 0
     float: left
-    color: $grey-color-dark
 
 .site-nav
     float: right
@@ -20,7 +31,6 @@
     .menu-icon
         display: none
     .page-link
-        color: $text-color
         line-height: $base-line-height
         margin-left: 20px
     +media-query($on-palm)
@@ -58,7 +68,7 @@
 // * Site footer
 
 .site-footer
-    border-top: 1px solid $grey-color-light
+    @extend %negativo
     padding: $spacing-unit 0
 
 .footer-heading
@@ -93,20 +103,6 @@
     color: $grey-color
     line-height: 1
 
-.post-actions
-    font-size: $small-font-size
-    a
-        display: inline-block
-        padding: 5px 15px
-        border-radius: 4px
-        color: $text-color
-        &:hover, &:focus
-            background-color: $grey-color-light
-
-.post-input
-    .post-actions
-        margin-bottom: $spacing-unit / 2
-
 .post-link
     display: block
     font-size: 24px
@@ -125,6 +121,12 @@
 
 .post-content
     margin-bottom: $spacing-unit
+    >
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure
+            @extend .wrapper
+        ul, ol
+            &:not(.seamless)
+                padding-left: $spacing-unit * 2
     h2
         font-size: 32px
         +media-query($on-laptop)
@@ -137,3 +139,8 @@
         font-size: 20px
         +media-query($on-laptop)
             font-size: 18px
+
+// * Sections
+
+.section-areas
+    @extend %negativo

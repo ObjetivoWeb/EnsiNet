@@ -2,26 +2,82 @@
 layout: default
 ---
 
-<div class="home page-content">
+<div class="page-content section-home">
 
-  <div class="wrapper large" data-grid="spacing">
-    <section data-cell="3of4">
+  <div class="wrapper large" data-grid="center spacing">
+    <section data-cell="1of3">
 
-      <h1 class="page-heading">Bem vindo a {{ site.title }}!</h1>
-      
+      <h1 class="page-heading">Bem vindo à {{ site.title }}!</h1>
       <p>{{ site.description }}</p>
 
     </section>
-    <aside data-cell="1of4">
-      <form action="{{ site.baseurl }}/login/" method="post">
-        <fieldset>
-          <legend>Faça login:</legend>
-          <p><label for="mail">E-mail</label><input type="email" name="mail"></p>
-          <p><label for="senha">Senha</label><input type="password" name="senha"></p>
-          <p><button>Entrar</button></p>
-        </fieldset>
-      </form>
+
+    <aside data-cell="2of3">
+
+      <img src="{{ site.baseurl }}/img/home-hero.jpg" alt="Plataforma de ensino">
+
     </aside>
   </div>
 
+</div>
+
+<div class="page-content section-areas brand-color">
+  <section class="wrapper">
+    <ul class="seamless txt-center" data-grid="spacing">
+        <li data-cell="1of4">
+            <div class="wrapper svg-container">{% include svg/apple.svg %}</div>
+            <p><a href="#">Ciências da Natureza e suas tecnologias</a></p>
+        </li>
+        <li data-cell="1of4">
+            <div class="wrapper svg-container">{% include svg/civilization.svg %}</div>
+            <p><a href="#">Ciências Humanas e suas tecnologias</a></p>
+        </li>
+        <li data-cell="1of4">
+            <div class="wrapper svg-container">{% include svg/compass.svg %}</div>
+            <p><a href="#">Matemática e suas tecnologias</a></p>
+        </li>
+        <li data-cell="1of4">
+            <div class="wrapper svg-container">{% include svg/translation.svg %}</div>
+            <p><a href="#">Linguagens, códigos e suas tecnologias</a></p>
+        </li>
+    </ul>
+  </section>
+</div>
+
+<div class="page-content section-gallery">
+  <div class="wrapper">
+    <h2 class="page-heading txt-center">Responsáveis</h2>
+    <ul class="seamless txt-center" data-grid="center spacing">
+      <li data-cell="">
+        <div data-block="table center circ">
+          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/vladzima/128.jpg" alt="">
+        </div>
+        <p>Lúcio</p>
+      </li><li data-cell="">
+        <div data-block="table center circ">
+          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/towhidzaman/128.jpg" alt="">
+        </div>
+        <p>Dado</p>
+      </li><li data-cell="">
+        <div data-block="table center circ">
+          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/ashleyford/128.jpg" alt="">
+        </div>
+        <p>Neto</p>
+      </li><li data-cell="">
+        <div data-block="table center circ">
+          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="">
+        </div>
+        <p>Geiza</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<hr>
+
+<div class="page-content section-">
+  <div class="wrapper">
+    <h1>Section...</h1>
+    <p>Mais conteúdo aqui?</p>
+  </div>
 </div>

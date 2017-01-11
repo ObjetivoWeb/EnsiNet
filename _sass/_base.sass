@@ -19,8 +19,12 @@ body
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, %vertical-rhythm
     margin-top: $spacing-unit / 2
     margin-bottom: $spacing-unit / 2
-    .post-content > &
-        @extend .wrapper
+
+hr
+    border-style: none none solid
+    border-color: $grey-color-light
+    margin: $spacing-unit auto
+    max-width: $content-width
 
 img
     max-width: 100%
@@ -39,6 +43,7 @@ ul, ol
         list-style: none
 
 li
+    margin-bottom: $spacing-unit / 2
     > ul, > ol
         margin-bottom: 0
 
@@ -98,12 +103,33 @@ pre
         display: table
         clear: both
 
+.svg-container
+    svg
+        color: inherit
+        path, rect, circle, polygon
+            fill: currentcolor
+    
+
 .icon
+    @extend .svg-container
     > svg
         display: inline-block
         width: 16px
         height: 16px
         vertical-align: middle
-        color: inherit
-        path
-            fill: currentcolor
+
+.txt-center
+    text-align: center
+
+
++module(block)
+    display: block
+    +variant(center)
+        margin: auto
+    +variant(inline)
+        display: inline-block
+    +variant(table)
+        display: table
+    +variant(circ)
+        border-radius: 9999px
+        overflow: hidden
