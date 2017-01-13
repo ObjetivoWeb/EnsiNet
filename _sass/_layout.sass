@@ -7,9 +7,11 @@
     a
         color: inherit
         text-decoration: none
-        &:hover, &:focus
-            color: #fff
-            outline-color: #00fa9a
+        &:hover,
+        &:focus
+            color: $ui-color-active
+            text-shadow: 0 0 3px $ui-color-active
+            outline: none
 
 .site-header
     @extend %negativo
