@@ -17,3 +17,21 @@ gems:
 exclude:
   - gulpfile.js
   - README.md
+
+collections:
+  unidades:
+    output: true
+  projetos:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: unidades
+    values:
+      layout: unidade
+  - scope:
+      path: ""
+      type: projetos
+    values:
+      layout: projeto

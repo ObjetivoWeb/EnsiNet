@@ -14,19 +14,6 @@ layout: default
 
     {{ content }}
 
-    {% for projeto in site.data.projetos[page_name] %}
-
-      <hr>
-
-      <h2>{{ projeto.Unidade }}</h2>
-      <p>{{ projeto["Série"] }}º ano {{ projeto["Turma"] }} do Ensino {{ projeto["Nível"] }}</p>
-      <p>Equipe <strong>{{ projeto["Nome da equipe"] }}</strong></p>
-      <p><small><strong>{{ projeto["Área"] }}</strong> <br>{{ projeto["Alunos"] }}</small></p>
-      <h3>Projeto: {{ projeto["Nome do projeto"] }}</h3>
-      <p>Formato: {{ projeto["Tipo de projeto"] }}</p>
-
-    {% endfor %}
-
   </div>
 
 </article>

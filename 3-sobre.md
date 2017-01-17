@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Projeto de Conclusão de Série
-menu-title: O projeto
+menu-title: Sobre o projeto
 permalink: /sobre/
 ---
 
