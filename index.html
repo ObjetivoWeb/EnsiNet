@@ -83,10 +83,35 @@ layout: default
 
 <hr>
 
-<div class="page-content section-">
+<div class="page-content section-lorem">
   <div class="wrapper">
     <h1>Section...</h1>
     <p>Mais conteúdo aqui?</p>
     <p><a href="#">Testando um link...</a></p>
+  </div>
+</div>
+
+<hr>
+
+<div class="page-content section-sugestoes">
+  <div class="wrapper" data-grid="spacing">
+    <div data-cell="1of3">
+      <h2>Unidades</h2>
+      {% for unidade in site.unidades %}
+        <article class="unidade">
+          <h3 class="post-heading">{{ unidade.title }}</h3>
+          <p>{{ unidade.content }}</p>
+        </article>
+      {% endfor %}
+    </div>
+    <div data-cell="1of3">
+      <h2>Áreas</h2>
+      {% for area in site.data.areas %}
+        <article class="area">
+          <h3 class="post-heading">{{ area.title }}</h3>
+          <p>{{ area.content }}</p>
+        </article>
+      {% endfor %}
+    </div>
   </div>
 </div>
