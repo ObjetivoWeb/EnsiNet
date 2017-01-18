@@ -8,6 +8,7 @@ description: >
   investigativo e colaborativo.
 baseurl: "/EnsiNet"
 url: "http://objetivoweb.github.io"
+semestre: "2017-1"
 
 markdown: kramdown
 
@@ -19,12 +20,19 @@ exclude:
   - README.md
 
 collections:
+  areas:
+    output: true
   unidades:
     output: true
   projetos:
     output: true
 
 defaults:
+  - scope:
+      path: ""
+      type: areas
+    values:
+      layout: area
   - scope:
       path: ""
       type: unidades
