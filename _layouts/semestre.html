@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<article class="post page-content">
+
+  <header class="post-header wrapper large">
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+
+    <hr>
+
+    {% assign semestre = page.name | remove: '.md' %}
+
+    <div class="page-content section-sugestoes">
+      <div class="wrapper" data-grid="spacing">
+        <div data-cell="1of3">
+          {% include lista_unidades.html semestre = semestre %}
+        </div>
+        <div data-cell="1of3">
+          {% include lista_areas.html semestre = semestre %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</article>

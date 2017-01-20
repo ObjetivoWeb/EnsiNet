@@ -1,0 +1,8 @@
+<h3>Áreas</h3>
+<ul class="seamless">
+  {% for area in site.areas %}{% assign crumbs = area.url | split: '/' %}
+    {% if crumbs[2] == include.semestre %}
+      <li><a href="{{ site.baseurl }}{{ area.url }}">{{ area.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>

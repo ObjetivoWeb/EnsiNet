@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% assign page_semestre = site.semestre %}
+
 <div class="page-content section-home">
 
   <div class="wrapper large" data-grid="center spacing">
@@ -22,71 +24,77 @@ layout: default
 </div>
 
 <div class="page-content section-areas brand-color">
-  <section class="wrapper">
+  <section class="wrapper large">
     <ul class="seamless txt-center" data-grid="spacing">
-        <li data-cell="1of4">
-            <a href="#" data-block>
-              <span data-block class="wrapper svg-container">{% include svg/apple.svg %}</span>
-              <small data-block="">Ciências da Natureza e suas tecnologias</small>
+      {% for area in site.areas %}{% assign crumbs = area.url | split: '/' %}{% assign area_semestre = crumbs[2] %}
+        {% if page_semestre == area_semestre %}
+          <li data-cell="1of4">
+            <a href="{{ site.baseurl }}{{ area.url }}" data-block>
+              <span data-block class="wrapper svg-container">
+                {% assign icone_url = "svg/" | append: area.icone | append: '.svg' %}
+                {% include {{ icone_url }} %}
+              </span>
+              <small data-block="">{{ area.title }}</small>
             </a>
-        </li>
-        <li data-cell="1of4">
-            <a href="#" data-block>
-              <span data-block class="wrapper svg-container">{% include svg/civilization.svg %}</span>
-              <small data-block="">Ciências Humanas e suas tecnologias</small>
-            </a>
-        </li>
-        <li data-cell="1of4">
-            <a href="#" data-block>
-              <span data-block class="wrapper svg-container">{% include svg/compass.svg %}</span>
-              <small data-block="">Matemática e suas tecnologias</small>
-            </a>
-        </li>
-        <li data-cell="1of4">
-            <a href="#" data-block>
-              <span data-block class="wrapper svg-container">{% include svg/translation.svg %}</span>
-              <small data-block="">Linguagens, códigos e suas tecnologias</small>
-            </a>
-        </li>
+          </li>
+        {% endif %}
+      {% endfor %}
     </ul>
   </section>
 </div>
 
-<div class="page-content section-gallery">
-  <div class="wrapper">
-    <h2 class="page-heading txt-center">Responsáveis</h2>
-    <ul class="seamless txt-center" data-grid="center spacing">
-      <li data-cell="">
-        <div data-block="table center circ">
-          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/vladzima/128.jpg" alt="">
-        </div>
-        <p>Lúcio</p>
-      </li><li data-cell="">
-        <div data-block="table center circ">
-          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/towhidzaman/128.jpg" alt="">
-        </div>
-        <p>Dado</p>
-      </li><li data-cell="">
-        <div data-block="table center circ">
-          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/ashleyford/128.jpg" alt="">
-        </div>
-        <p>Neto</p>
-      </li><li data-cell="">
-        <div data-block="table center circ">
-          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="">
-        </div>
-        <p>Geiza</p>
-      </li>
-    </ul>
-  </div>
-</div>
+<div class="page-content section-semestre">
 
-<hr>
+  <div class="wrapper large" data-grid="center spacing">
+    <div data-cell="2of3">
+      <h2 class="page-heading txt-center">Responsáveis</h2>
+      <ul class="seamless txt-center" data-grid="center around wrap">
+        
+        <li class="wrapper" data-cell="">
+          <div data-block="table center circ">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/vladzima/128.jpg" alt="">
+          </div>
+          <p>Lúcio</p>
+        </li>
+        <li class="wrapper" data-cell="">
+          <div data-block="table center circ">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/towhidzaman/128.jpg" alt="">
+          </div>
+          <p>Dado</p>
+        </li>
+        <li class="wrapper" data-cell="">
+          <div data-block="table center circ">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/ashleyford/128.jpg" alt="">
+          </div>
+          <p>Neto</p>
+        </li>
+        <li class="wrapper" data-cell="">
+          <div data-block="table center circ">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="">
+          </div>
+          <p>Geiza</p>
+        </li>
 
-<div class="page-content section-lorem">
-  <div class="wrapper">
-    <h1>Section...</h1>
-    <p>Mais conteúdo aqui?</p>
-    <p><a href="#">Testando um link...</a></p>
+      </ul>
+
+    </div>
+
+    <div data-cell="shrink">
+      {% include lista_unidades.html semestre = page_semestre %}
+    </div>
+
   </div>
+
+  <hr>
+
+  <div class="wrapper">
+    {% for my_page in site.pages %}{% assign my_page_menu_semestre = my_page.name | remove: '.md' %}
+      {% if my_page_menu_semestre == page_semestre %}
+        <h1>{{ my_page.title }}</h1>
+        {{ my_page.content }}
+        <p><a href="{{ site.baseurl }}{{ my_page.url }}">Conheça os projetos...</a></p>
+      {% endif %}
+    {% endfor %}
+  </div>
+
 </div>
