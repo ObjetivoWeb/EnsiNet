@@ -40,29 +40,38 @@
         position: absolute
         top: 9px
         right: $spacing-unit / 2
-        background-color: $background-color
-        border: 1px solid $grey-color-light
         border-radius: 5px
         text-align: right
         .menu-icon
             display: block
             float: right
             width: 36px
-            height: 26px
+            height: 40px
             line-height: 0
             padding-top: 10px
             text-align: center
             > svg
                 width: 18px
                 height: 15px
+                color: inherit
                 path
-                    fill: $grey-color-dark
+                    fill: currentcolor
         .trigger
             clear: both
             display: none
         &:hover .trigger
             display: block
             padding-bottom: 5px
+            background-color: $background-color
+            box-shadow: -3px 3px 10px 0 rgba(black, .1)
+            animation: menu-get-up .2s ease-in-out
+        @keyframes menu-get-up
+            0%
+                opacity: 0
+                transform: translateY(15px)
+            100%
+                opacity: 1
+                transform: translateY(0)
         .page-link
             display: block
             padding: 5px 10px
@@ -145,5 +154,19 @@
 
 // * Sections
 
+%area-img
+    max-width: 120px
+
+.section-unidades
+    .page-heading
+        padding: $spacing-unit / 2 0
+        border-bottom: 1px solid $grey-color-light
+    
+    .area-img
+        @extend %area-img
+
 .section-areas
     @extend %negativo
+
+    .area-img
+        @extend %area-img

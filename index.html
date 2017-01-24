@@ -30,7 +30,7 @@ layout: default
         {% if page_semestre == area_semestre %}
           <li data-cell="1of4">
             <a href="{{ site.baseurl }}{{ area.url }}" data-block>
-              <span data-block class="wrapper svg-container">
+              <span data-block class="wrapper svg-container area-img">
                 {% assign icone_url = "svg/" | append: area.icone | append: '.svg' %}
                 {% include {{ icone_url }} %}
               </span>
@@ -43,47 +43,23 @@ layout: default
   </section>
 </div>
 
-<div class="page-content section-semestre">
+<div class="page-content section-unidades">
 
-  <div class="wrapper large" data-grid="center spacing">
-    <div data-cell="2of3">
-      <h2 class="page-heading txt-center">Responsáveis</h2>
-      <ul class="seamless txt-center" data-grid="center around wrap">
-        
-        <li class="wrapper" data-cell="">
-          <div data-block="table center circ">
-            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/vladzima/128.jpg" alt="">
-          </div>
-          <p>Lúcio</p>
-        </li>
-        <li class="wrapper" data-cell="">
-          <div data-block="table center circ">
-            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/towhidzaman/128.jpg" alt="">
-          </div>
-          <p>Dado</p>
-        </li>
-        <li class="wrapper" data-cell="">
-          <div data-block="table center circ">
-            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/ashleyford/128.jpg" alt="">
-          </div>
-          <p>Neto</p>
-        </li>
-        <li class="wrapper" data-cell="">
-          <div data-block="table center circ">
-            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="">
-          </div>
-          <p>Geiza</p>
-        </li>
-
-      </ul>
-
+    <div class="wrapper">
+      <h2 class="page-heading txt-center">Unidades</h2>
     </div>
-
-    <div data-cell="shrink">
-      {% include lista_unidades.html semestre = page_semestre %}
-    </div>
-
-  </div>
+    <ul class="seamless txt-center" data-grid="around wrap">
+      {% for unidade in site.unidades %}{% assign crumbs = unidade.url | split: '/' %}
+        {% if crumbs[2] == page_semestre %}
+          <li class="wrapper" data-cell="around wrap">
+            <div data-block="table center circ" class="area-img">
+              <img src="{{ site.baseurl }}/img/unidades/{{ crumbs[3] | remove: '.html' }}.jpg" alt="{{ unidade.title }}">
+            </div>
+            <p>{{ unidade.title }}</p>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
 
   <hr>
 
