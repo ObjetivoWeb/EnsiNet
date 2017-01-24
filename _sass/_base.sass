@@ -50,6 +50,10 @@ li
 h1, h2, h3, h4, h5, h6
     font-weight: $base-font-weight
 
+@for $i from 0 through 6
+    h#{$i}
+        font-size: $base-font-size * (3 / $i - 6)
+
 a
     color: $brand-color
     text-decoration: none

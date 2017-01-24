@@ -2,18 +2,51 @@
 layout: default
 ---
 
+{% assign crumbs = page.url | split: '/' %}
+{% assign page_semestre = crumbs[2] %}
 {% assign page_name = page.name | remove: '.md' %}
-
-<article class="post page-content">
+{% for p in site.data[page_semestre].projetos %}{% if p["Nome do projeto"] == page.title %}{% assign projeto = p %}{% endif %}{% endfor %}
+<nav class="page-breadcrumbs">
+  
+  <ul class="wrapper large breadcrumbs" data-grid="row start wrap">
+  
+    {% for my_page in site.pages %}
+      {% assign my_page_name = my_page.name | remove: '.md' %}
+      {% if my_page_name == crumbs[2] %}
+        <li data-cell="shrink"><a href="{{ site.baseurl }}{{ my_page.url }}">{{ my_page.title }}</a></li> 
+      {% endif %}
+    {% endfor %}
+  
+    {% for unidade in site.unidades %}{% assign unidade_crumbs = unidade.url | split: '/' %}{% assign unidade_name = unidade_crumbs[3] | remove: '.html' %}
+      {% if unidade_name == crumbs[3] %}
+        <li data-cell="shrink"><a href="{{ site.baseurl }}{{ unidade.url }}">{{ unidade.title }}</a></li> 
+      {% endif %}
+    {% endfor %}
+  
+    <li data-cell="shrink"><a href="#">{{ projeto["Nível"] }} ▼</a></li>
+    <li data-cell="shrink"><a href="#">{{ projeto["Série"] }}º {{ projeto["Turma"] }} ▼</a></li>
+  
+  </ul>
+  </nav><article class="post page-content">
 
   <header class="post-header wrapper large">
-    <h1 class="post-title">{{ page.title }}</h1>
+    <h1 class="post-title">{{ projeto["Nome do projeto"] }}</h1>
+    <div data-grid="spacing" class="wrapper post-meta">
+      <div data-cell="">
+        <h2><small>Equipe:</small> {{ projeto["Nome da equipe"] }}</h2>
+        <h3>{{ projeto["Área"] }}</h3>
+        <p><small>Unidade</small> {{ projeto["Unidade"] }} <br>{{ projeto["Série"] }}º ano {{ projeto["Turma"] }} do Ensino {{ projeto["Nível"] }}</p>
+      </div>
+      <div data-cell="">
+        <p><small>Integrantes:</small> <br>{{ projeto["Integrantes"] }}</p>
+        <p><small>Orientador: </small> <br>{{ projeto["Orientador"] }}</p>
+        <p><small>Tipo de projeto:</small> <br>{{ projeto["Tipo de projeto"] }}</p>
+      </div>
+    </div>
   </header>
 
   <div class="post-content">
-
     {{ content }}
-
   </div>
 
 </article>

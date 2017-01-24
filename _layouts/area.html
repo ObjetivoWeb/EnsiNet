@@ -5,22 +5,24 @@ layout: default
 {% assign crumbs = page.url | split: '/' %}
 {% assign page_semestre = crumbs[2] %}
 
-<article class="post page-content hero brand-color">
+<article class="post">
 
-  <header class="post-header wrapper large">
-    <h1 class="post-title">{{ page.title }}</h1>
-  </header>
-
-  <div class="post-content">
-
-    <div class="wrapper" data-grid="center spacing">
-      <div class="svg-container" data-cell="1of3 stretch">
+  <div class="page-content hero brand-color">
+    <header class="wrapper large" data-grid="center spacing">
+      <div class="svg-container" data-cell="1of4">
         {% assign icone_url = "svg/" | append: page.icone | append: '.svg' %}
         {% include {{ icone_url }} %}
       </div>
-      <div data-cell="2of3">{{ content }}</div>
-    </div>
+      <div data-cell="3of4">
+        <h1 class="post-title">{{ page.title }}</h1>
+      </div>
+    </header>
+  </div>
 
+  <div class="post-content">
+    <div class="wrapper" data-grid="center spacing">
+      {{ content }}
+    </div>
   </div>
 
 </article>

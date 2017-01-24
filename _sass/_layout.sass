@@ -14,11 +14,18 @@
             outline: none
 
 .site-header
-    @extend %negativo
+    // @extend %negativo
+    background-color: $grey-color-light
     min-height: 56px
     line-height: 56px
     // Positioning context for the mobile navigation icon
     position: relative
+    a
+        color: $text-color
+        &:hover,
+        &:focus
+            text-decoration: none
+            color: $brand-color
 
 .site-title
     font-size: 26px
@@ -27,6 +34,9 @@
     margin-bottom: 0
     margin-right: $spacing-unit
     float: left
+    .site-title-label
+        +media-query($on-palm)
+            display: none
 
 .site-nav
     float: right
@@ -96,6 +106,24 @@
 .page-heading
     font-size: 20px
     line-height: 1.2
+
+.page-breadcrumbs
+    @extend %negativo
+    padding: 1px 0
+
+    .breadcrumbs
+        margin-top: 0
+        margin-bottom: 0
+        line-height: 2.5
+        li
+            margin-right: $spacing-unit / 2
+            margin-bottom: 0
+            &:not(:last-child)
+                &:after
+                    content: '\232a'
+                    margin-left: 15px
+        a
+            display: inline-block
 
 .post-list
     margin-left: 0

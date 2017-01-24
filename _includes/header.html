@@ -4,7 +4,7 @@
 
     <a class="site-title" href="{{ site.baseurl }}/">
       <img src="{{ site.baseurl }}/favicon.png" alt="TCS" height="28">
-      {{ site.title }}
+      <span class="site-title-label">{{ site.title }}</span>
     </a>
     {% for my_page in site.pages %}
       {% assign my_page_name = my_page.name | remove: '.md' %}
