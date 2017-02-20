@@ -31,8 +31,7 @@ layout: default
           <li data-cell="1of4">
             <a href="{{ site.baseurl }}{{ area.url }}" data-block>
               <span data-block class="wrapper svg-container area-img">
-                {% assign icone_url = "svg/" | append: area.icone | append: '.svg' %}
-                {% include {{ icone_url }} %}
+                {% include svg/{{ area.icone }}.svg %}
               </span>
               <small data-block="">{{ area.title }}</small>
             </a>
@@ -63,7 +62,9 @@ layout: default
       {% endfor %}
     </ul>
 
-  <hr>
+</div>
+
+<div class="page-content section-excerpt hero light">
 
   <div class="wrapper">
     {% for my_page in site.pages %}{% assign my_page_menu_semestre = my_page.name | remove: '.md' %}

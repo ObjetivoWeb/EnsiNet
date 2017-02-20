@@ -2,7 +2,7 @@
 <ul class="seamless">
   {% for area in site.areas %}{% assign crumbs = area.url | split: '/' %}
     {% if crumbs[2] == include.semestre %}
-      <li><a href="{{ site.baseurl }}{{ area.url }}">{{ area.title }}</a></li>
+      <li><a href="{{ site.baseurl }}{{ area.url }}" data-grid="center spacing"><span class="svg-container" data-cell="1of4">{% include svg/{{ area.icone }}.svg %}</span> <span data-cell="3of4">{{ area.title }}</span></a></li>
     {% endif %}
   {% endfor %}
 </ul>
