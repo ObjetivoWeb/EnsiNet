@@ -6,6 +6,7 @@ var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
+var semestre = '2017-1';
 
 /**
  * Build the Jekyll Site
@@ -42,7 +43,7 @@ gulp.task('browser-sync', ['jekyll-build'], function() {
  * if you add folder for pages, collection or datas, add them to this list
  */
 gulp.task('watch', function () {
-    gulp.watch(['./*', '_layouts/*', '_includes/*', '_data/*', '_areas/*', '_data/projetos/*', '_projetos/*', '_projetos/2017-1/*', '_unidades/*', '_unidades/2017-1/*', '_sass/*', 'css/*'], ['jekyll-rebuild']);
+    gulp.watch(['./*', '_layouts/*', '_includes/*', './**/2017-1/**/*', '_sass/*', 'css/*'], ['jekyll-rebuild']);
 });
 
 /**
