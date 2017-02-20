@@ -18,6 +18,7 @@ gems:
 exclude:
   - gulpfile.js
   - README.md
+  - desktop.ini
 
 collections:
   areas:
