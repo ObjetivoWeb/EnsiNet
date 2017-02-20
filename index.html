@@ -48,14 +48,16 @@ layout: default
     <div class="wrapper">
       <h2 class="page-heading txt-center">Unidades</h2>
     </div>
-    <ul class="seamless txt-center" data-grid="around wrap">
+    <ul class="seamless txt-center" data-grid="row around wrap">
       {% for unidade in site.unidades %}{% assign crumbs = unidade.url | split: '/' %}
         {% if crumbs[2] == page_semestre %}
-          <li class="wrapper" data-cell="around wrap">
-            <div data-block="table center circ" class="area-img">
-              <img src="{{ site.baseurl }}/img/unidades/{{ crumbs[3] | remove: '.html' }}.jpg" alt="{{ unidade.title }}">
-            </div>
-            <p>{{ unidade.title }}</p>
+          <li data-cell="shrink" class="wrapper">
+            <a href="{{ site.baseurl }}{{ unidade.url }}">
+              <span data-block="table center circ" class="unidade-img">
+                <img src="{{ site.baseurl }}/img/unidades/{{ crumbs[3] | remove: '.html' }}.jpg" alt="{{ unidade.title }}">
+              </span>
+              <strong>{{ unidade.title }}</strong>
+            </a>
           </li>
         {% endif %}
       {% endfor %}
