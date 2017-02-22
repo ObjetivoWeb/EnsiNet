@@ -5,7 +5,7 @@ menu-title: Sobre o projeto
 permalink: /sobre/
 ---
 
-![Sala de aula]({{ site.baseurl }}/img/teaching-platform.jpg)
+![Sala de aula]({{ site.baseurl }}/img/teaching-platform.png)
 
 Esta é a nossa plataforma de publicação do Trabalho de Conclusão de Série (TCS), realizado pelos alunos do Colégio Objetivo Baixada. Com o objetivo de estimular o estudo e a pesquisa, as turmas do Fundamental 2 e Ensino Médio realizam um TCS, que será apresentado para a banca de professores e a comunidade ao final de cada semestre.
 
