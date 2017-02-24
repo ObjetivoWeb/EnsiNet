@@ -12,9 +12,9 @@ layout: default
   </header>
 
   <div class="post-content">
-
-    {{ content }}
-
+    <div class="wrapper" data-grid="center spacing">
+      {{ content }}
+    </div>
   </div>
 
 </article>
@@ -24,16 +24,12 @@ layout: default
     <div data-cell="3of4">
       <h2>Projetos {{ page_semestre }}</h2>
       <ul class="seamless">
-        {% for projeto in site.data[page_semestre].projetos %}
-          {% if projeto["Unidade"] == page.title %}
-            {% capture projeto_url %}{% include projeto_url.html
-              page_semestre = page_semestre
-              projeto = projeto
-            %}{% endcapture %}
+        {% for projeto in site.projetos %}{% assign pro_crumbs = projeto.url | split: '/' %}
+          {% if projeto.unidade == page.title and pro_crumbs[2] == page_semestre %}
             <li>
-              <h2 class="post-link"><a href="{{ projeto_url }}">{{ projeto["Nome do projeto"] }}</a></h2>
-              <p>Equipe <strong>{{ projeto["Nome da equipe"] }}</strong></p>
-              <p class="post-meta">{{ projeto["Série"] }}º ano {{ projeto["Turma"] }} do Ensino {{ projeto["Nível"] }}</p>
+              <h2 class="post-link"><a href="{{ site.baseurl }}{{ projeto.url }}">{{ projeto.title }}</a></h2>
+              <p>Equipe <strong>{{ projeto.equipe }}</strong></p>
+              <p class="post-meta">{{ projeto.serie }}º ano {{ projeto.turma }} do Ensino {{ projeto.nivel }}</p>
             </li>
           {% endif %}
         {% endfor %}

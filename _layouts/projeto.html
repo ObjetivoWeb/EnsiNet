@@ -5,7 +5,6 @@ layout: default
 {% assign crumbs = page.url | split: '/' %}
 {% assign page_semestre = crumbs[2] %}
 {% assign page_name = page.name | remove: '.md' %}
-{% for p in site.data[page_semestre].projetos %}{% if p["Nome do projeto"] == page.title %}{% assign projeto = p %}{% endif %}{% endfor %}
 <nav class="page-breadcrumbs">
   
   <ul class="wrapper large breadcrumbs" data-grid="row start wrap">
@@ -23,24 +22,24 @@ layout: default
       {% endif %}
     {% endfor %}
   
-    <li data-cell="shrink"><a href="#">{{ projeto["Nível"] }} ▼</a></li>
-    <li data-cell="shrink"><a href="#">{{ projeto["Série"] }}º {{ projeto["Turma"] }} ▼</a></li>
+    <li data-cell="shrink"><a href="#">{{ page.nivel"] }} ▼</a></li>
+    <li data-cell="shrink"><a href="#">{{ page.serie"] }}º {{ page.turma }} ▼</a></li>
   
   </ul>
   </nav><article class="post page-content">
 
   <header class="post-header wrapper large">
-    <h1 class="post-title">{{ projeto["Nome do projeto"] }}</h1>
+    <h1 class="post-title">{{ page.title }}</h1>
     <div data-grid="spacing" class="wrapper post-meta">
       <div data-cell="">
-        <h2><small>Equipe:</small> {{ projeto["Nome da equipe"] }}</h2>
-        <h3>{{ projeto["Área"] }}</h3>
-        <p><small>Unidade</small> {{ projeto["Unidade"] }} <br>{{ projeto["Série"] }}º ano {{ projeto["Turma"] }} do Ensino {{ projeto["Nível"] }}</p>
+        <h2><small>Equipe:</small> {{ page.equipe }}</h2>
+        <h3>{{ page.area }}</h3>
+        <p><small>Unidade</small> {{ page.unidade }} <br>{{ page.serie }}º ano {{ page.turma }} do Ensino {{ page.nivel }}</p>
       </div>
       <div data-cell="">
-        <p><small>Integrantes:</small> <br>{{ projeto["Integrantes"] }}</p>
-        <p><small>Orientador: </small> <br>{{ projeto["Orientador"] }}</p>
-        <p><small>Tipo de projeto:</small> <br>{{ projeto["Tipo de projeto"] }}</p>
+        <p><small>Integrantes:</small> <br>{{ page.integrantes }}</p>
+        <p><small>Orientador: </small> <br>{{ page.orientador }}</p>
+        <p><small>Tipo de projeto:</small> <br>{{ page.tipo }}</p>
       </div>
     </div>
   </header>

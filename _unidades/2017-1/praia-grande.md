@@ -1,3 +1,0 @@
----
-title: Praia Grande
----
