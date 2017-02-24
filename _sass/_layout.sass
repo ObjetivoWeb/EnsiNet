@@ -35,10 +35,19 @@
         &:focus
             text-decoration: none
             color: $brand-color
+    .page-link
+        font:
+            family: $ui-font-family
+            size: 14px
+        text-transform: uppercase
+        line-height: $base-line-height
+        margin-left: 20px
 
 .site-title
-    font-size: 26px
-    font-weight: 300
+    font:
+        family: $title-font-family
+        size: 22px
+        weight: 300
     letter-spacing: -1px
     margin-bottom: 0
     margin-right: $spacing-unit
@@ -52,9 +61,6 @@
     line-height: 56px
     .menu-icon
         display: none
-    .page-link
-        line-height: $base-line-height
-        margin-left: 20px
     +media-query($on-palm)
         position: absolute
         top: 9px
@@ -80,7 +86,7 @@
             display: none
         &:hover .trigger
             display: block
-            padding-bottom: 5px
+            padding: 5px
             background-color: $background-color
             box-shadow: -3px 3px 10px 0 rgba(black, .1)
             animation: menu-get-up .2s ease-in-out
@@ -94,7 +100,6 @@
         .page-link
             display: block
             padding: 5px 10px
-            margin-left: 20px
 
 // * Site footer
 
@@ -102,18 +107,13 @@
     @extend %negativo
     padding: $spacing-unit 0
 
-.footer-heading
-    font-size: 18px
-    margin-bottom: $spacing-unit / 2
-
-
 // * Page content
 
 .page-content
     padding: $spacing-unit 0
 
 .page-heading
-    font-size: 20px
+    font-size: 22px
     line-height: 1.2
 
 .page-breadcrumbs
@@ -163,7 +163,6 @@
 
 .post-title
     font-size: 42px
-    letter-spacing: -1px
     line-height: 1
     +media-query($on-laptop)
         font-size: 36px
@@ -176,18 +175,6 @@
         ul, ol
             &:not(.seamless)
                 padding-left: $spacing-unit * 2
-    h2
-        font-size: 32px
-        +media-query($on-laptop)
-            font-size: 28px
-    h3
-        font-size: 26px
-        +media-query($on-laptop)
-            font-size: 22px
-    h4
-        font-size: 20px
-        +media-query($on-laptop)
-            font-size: 18px
 
 // * Sections
 
