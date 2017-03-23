@@ -10,8 +10,7 @@ layout: default
   <div class="page-content hero brand-color">
     <header class="wrapper large" data-grid="center spacing">
       <div class="svg-container" data-cell="1of4">
-        {% assign icone_url = "svg/" | append: page.icone | append: '.svg' %}
-        {% include {{ icone_url }} %}
+        {% include svg/{{ page.icone }}.svg %}
       </div>
       <div data-cell="3of4">
         <h1 class="post-title">{{ page.title }}</h1>
@@ -29,9 +28,9 @@ layout: default
 
 <nav class="page-content">
   <div class="wrapper" data-grid="spacing">
-    <div data-cell="3of4">
+    <div data-cell="2of3">
       <h2>Projetos {{ page_semestre }}</h2>
-      <ul class="seamless">
+      <ul class="seamless post-list">
         {% for projeto in site.projetos %}{% assign pro_crumbs = projeto.url | split: '/' %}
           {% if projeto.area == page.title and pro_crumbs[2] == page_semestre %}
             <li>
@@ -43,7 +42,7 @@ layout: default
         {% endfor %}
       </ul>
     </div>
-    <div data-cell="1of4">
+    <div data-cell="1of3">
       {% include menu_lateral.html semestre = page_semestre %}
     </div>
   </div>

@@ -3,6 +3,7 @@
     color: $grey-color
     &.brand-color
         background-color: $brand-color
+        background-image: linear-gradient(to left, #0acffe 0%, #495aff 100%)
         color: $grey-color-light
     &.light
         background-color: $grey-color-light
@@ -21,6 +22,14 @@
             color: $ui-color-active
             text-shadow: 0 0 3px $ui-color-active
             outline: none
+    .post-title
+        font-family: $base-font-family
+        line-height: 1.5
+        letter-spacing: .5em
+        +media-query($on-palm)
+            font-size: 32px
+            line-height: 1.2
+            letter-spacing: .2em
 
 .site-header
     // @extend %negativo
@@ -43,7 +52,7 @@
         line-height: $base-line-height
         margin-left: 20px
     
-    +media-greater($on-palm)
+    +media-greater($on-laptop)
         background:
             image: url('../img/logo-objetivo.png')
             repeat: no-repeat
@@ -157,7 +166,13 @@
 .post-meta
     font-size: $small-font-size
     color: $grey-color
-    line-height: 1
+    line-height: 1.2
+    .post-meta-label
+        display: block
+        font:
+            family: $ui-font-family
+            size: $small-font-size
+        letter-spacing: 0
 
 .post-link
     display: block
@@ -182,6 +197,19 @@
         ul, ol
             &:not(.seamless)
                 padding-left: $spacing-unit * 2
+
+%lista-icone
+    max-width: 80px
+    min-width: 80px
+    max-height: 80px
+    min-height: 80px
+    margin-right: 25px
+.lista-unidades
+    .img-container
+        @extend %lista-icone
+.lista-areas
+    .svg-container
+        @extend %lista-icone
 
 // * Sections
 

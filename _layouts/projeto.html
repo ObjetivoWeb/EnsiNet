@@ -26,20 +26,24 @@ layout: default
     <li data-cell="shrink"><a href="#">{{ page.serie"] }}º {{ page.turma }} ▼</a></li>
   
   </ul>
-  </nav><article class="post page-content">
+</nav>
 
-  <header class="post-header wrapper large">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <div data-grid="spacing" class="wrapper post-meta">
-      <div data-cell="">
-        <h2><small>Equipe:</small> {{ page.equipe }}</h2>
-        <h3>{{ page.area }}</h3>
-        <p><small>Unidade</small> {{ page.unidade }} <br>{{ page.serie }}º ano {{ page.turma }} do Ensino {{ page.nivel }}</p>
-      </div>
-      <div data-cell="">
-        <p><small>Integrantes:</small> <br>{{ page.integrantes }}</p>
-        <p><small>Orientador: </small> <br>{{ page.orientador }}</p>
-        <p><small>Tipo de projeto:</small> <br>{{ page.tipo }}</p>
+<article class="post projeto">
+
+  <header class="post-header page-content">
+    <div class="wrapper large">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <div data-grid="spacing" class="wrapper post-meta">
+        <div data-cell="">
+          <h2><small class="post-meta-label">Equipe:</small> {{ page.equipe }}</h2>
+          <h3><small class="post-meta-label">Área:</small> {{ page.area }}</h3>
+          <p><small>Unidade</small> {{ page.unidade }} <br>{{ page.serie }}º ano {{ page.turma }} do Ensino {{ page.nivel }}</p>
+        </div>
+        <div data-cell="">
+          <p><small>Integrantes:</small> <br>{{ page.integrantes }}</p>
+          <p><small>Orientador: </small> <br>{{ page.orientador }}</p>
+          <p><small>Tipo de projeto:</small> <br>{{ page.tipo }}</p>
+        </div>
       </div>
     </div>
   </header>

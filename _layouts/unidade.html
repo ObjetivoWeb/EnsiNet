@@ -5,11 +5,18 @@ layout: default
 {% assign crumbs = page.url | split: '/' %}
 {% assign page_semestre = crumbs[2] %}
 
-<article class="post page-content">
+<article class="post">
 
-  <header class="post-header wrapper large">
-    <h1 class="post-title">{{ page.title }}</h1>
-  </header>
+  <div class="page-content hero brand-color">
+    <header class="wrapper large" data-grid="center spacing">
+      <div data-cell="1of4" data-block="circ" class="unidade-img">
+        <img src="{{ site.baseurl }}/img/unidades/{{ crumbs[3] | remove: '.html' }}.jpg" alt="{{ page.title }}">
+      </div>
+      <div data-cell="3of4">
+        <h1 class="post-title">{{ page.title }}</h1>
+      </div>
+    </header>
+  </div>
 
   <div class="post-content">
     <div class="wrapper">
@@ -21,9 +28,9 @@ layout: default
 
 <nav class="page-content">
   <div class="wrapper" data-grid="spacing">
-    <div data-cell="3of4">
+    <div data-cell="2of3">
       <h2>Projetos {{ page_semestre }}</h2>
-      <ul class="seamless">
+      <ul class="seamless post-list">
         {% for projeto in site.projetos %}{% assign pro_crumbs = projeto.url | split: '/' %}
           {% if projeto.unidade == page.title and pro_crumbs[2] == page_semestre %}
             <li>
@@ -35,7 +42,7 @@ layout: default
         {% endfor %}
       </ul>
     </div>
-    <div data-cell="1of4">
+    <div data-cell="1of3">
       {% include menu_lateral.html semestre = page_semestre %}
     </div>
   </div>
