@@ -18,11 +18,11 @@ Também temos como objetivo identificar estudantes talentosos e estimulá-los ao
 <ul class="seamless txt-center" data-grid="spacing">
     <li data-cell="1of4">
         <div class="wrapper">{% include svg/apple.svg %}</div>
-        <p>Ciências da Natureza e suas tecnologias</p>
+        <p>Ciências da natureza e suas tecnologias</p>
     </li>
     <li data-cell="1of4">
         <div class="wrapper">{% include svg/civilization.svg %}</div>
-        <p>Ciências Humanas e suas tecnologias</p>
+        <p>Ciências humanas e suas tecnologias</p>
     </li>
     <li data-cell="1of4">
         <div class="wrapper">{% include svg/compass.svg %}</div>
