@@ -5,11 +5,6 @@ layout: default
 {% assign crumbs = page.url | split: '/' %}
 {% assign page_semestre = crumbs[2] %}
 {% assign page_name = page.name | remove: '.md' %}
-{% for item in site.areas %}
-  {% if item.title == page.area %}
-    {% assign area_icone = item.icone %}
-  {% endif %}
-{% endfor %}
 <nav class="page-breadcrumbs">
   
   <ul class="wrapper large breadcrumbs" data-grid="row start wrap">
