@@ -134,21 +134,20 @@
 
 .page-breadcrumbs
     @extend %negativo
-    padding: 1px 0
 
     .breadcrumbs
         margin-top: 0
         margin-bottom: 0
-        line-height: 2.5
         li
-            margin-right: $spacing-unit / 2
             margin-bottom: 0
             &:not(:last-child)
                 &:after
                     content: '\232a'
-                    margin-left: 15px
+                    display: inline-block
+                    padding: 10px
         a
             display: inline-block
+            padding: 10px
 
 .post-list
     margin-left: 0

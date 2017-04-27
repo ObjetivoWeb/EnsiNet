@@ -15,9 +15,15 @@ layout: default
         <li data-cell="shrink"><a href="{{ site.baseurl }}{{ my_page.url }}">{{ my_page.title }}</a></li> 
       {% endif %}
     {% endfor %}
-  
-    {% for unidade in site.unidades %}{% assign unidade_crumbs = unidade.url | split: '/' %}{% assign unidade_name = unidade_crumbs[3] | remove: '.html' %}
-      {% if unidade_name == crumbs[3] %}
+
+    {% for area in site.areas %}
+      {% if area.title == page.area %}
+        <li data-cell="shrink"><a href="{{ site.baseurl }}{{ area.url }}">{{ area.title }}</a></li> 
+      {% endif %}
+    {% endfor %}
+
+    {% for unidade in site.unidades %}
+      {% if unidade.title == page.unidade %}
         <li data-cell="shrink"><a href="{{ site.baseurl }}{{ unidade.url }}">{{ unidade.title }}</a></li> 
       {% endif %}
     {% endfor %}
@@ -64,3 +70,14 @@ layout: default
   </div>
 
 </article>
+
+<div class="page-content section-sugestoes">
+  <div class="wrapper" data-grid="spacing">
+    <div data-cell="1of3">
+      {% include lista_unidades.html semestre = page_semestre %}
+    </div>
+    <div data-cell="1of3">
+      {% include lista_areas.html semestre = page_semestre %}
+    </div>
+  </div>
+</div>
