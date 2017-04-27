@@ -12,15 +12,15 @@ layout: default
 
     <hr>
 
-    {% assign semestre = page.name | remove: '.md' %}
+    {% assign page_semestre = page.name | remove: '.md' %}
 
     <div class="page-content section-sugestoes">
       <div class="wrapper" data-grid="spacing">
         <div data-cell="1of3">
-          {% include lista_unidades.html semestre = semestre %}
+          {% include lista_unidades.html semestre = page_semestre %}
         </div>
         <div data-cell="1of3">
-          {% include lista_areas.html semestre = semestre %}
+          {% include lista_areas.html semestre = page_semestre %}
         </div>
       </div>
     </div>
