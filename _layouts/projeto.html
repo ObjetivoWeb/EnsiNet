@@ -5,6 +5,11 @@ layout: default
 {% assign crumbs = page.url | split: '/' %}
 {% assign page_semestre = crumbs[2] %}
 {% assign page_name = page.name | remove: '.md' %}
+{% for item in site.areas %}
+  {% if item.title == page.area %}
+    {% assign area_icone = item.icone %}
+  {% endif %}
+{% endfor %}
 <nav class="page-breadcrumbs">
   
   <ul class="wrapper large breadcrumbs" data-grid="row start wrap">
@@ -22,8 +27,8 @@ layout: default
       {% endif %}
     {% endfor %}
   
-    <li data-cell="shrink"><a href="#">{{ page.nivel"] }} ▼</a></li>
-    <li data-cell="shrink"><a href="#">{{ page.serie"] }}º {{ page.turma }} ▼</a></li>
+    <li data-cell="shrink"><a href="#">{{ page.nivel }} ▼</a></li>
+    <li data-cell="shrink"><a href="#">{{ page.serie }}º {{ page.turma }} ▼</a></li>
   
   </ul>
 </nav>
@@ -48,6 +53,19 @@ layout: default
 
   <div class="post-content">
     {{ content }}
+    {% assign midia = site.data[page_semestre].midia[page.url] %}
+    {% if midia %}
+      {{ midia.description | markdownify }}
+      {% include /midia/{{ midia.tipo }}.html url = midia.url %}
+    {% else %}
+      <div class="wrapper" data-grid="center spacing">
+        <div data-cell="1of3">{% include svg/working-with-laptop.svg %}</div>
+        <div data-cell="2of3">
+          <h3>Este trabalho está em produção</h3>
+          <p>O trabalho dos alunos estará disponível assim que o processo de correção for concluído pelo orientador.</p>
+        </div>
+      </div>
+    {% endif %}
   </div>
 
 </article>
