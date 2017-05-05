@@ -5,34 +5,8 @@ layout: default
 {% assign crumbs = page.url | split: '/' %}
 {% assign page_semestre = crumbs[2] %}
 {% assign page_name = page.name | remove: '.md' %}
-<nav class="page-breadcrumbs">
-  
-  <ul class="wrapper large breadcrumbs" data-grid="row start wrap">
-  
-    {% for my_page in site.pages %}
-      {% assign my_page_name = my_page.name | remove: '.md' %}
-      {% if my_page_name == crumbs[2] %}
-        <li data-cell="shrink"><a href="{{ site.baseurl }}{{ my_page.url }}">{{ my_page.title }}</a></li> 
-      {% endif %}
-    {% endfor %}
 
-    {% for area in site.areas %}
-      {% if area.title == page.area %}
-        <li data-cell="shrink"><a href="{{ site.baseurl }}{{ area.url }}">{{ area.title }}</a></li> 
-      {% endif %}
-    {% endfor %}
-
-    {% for unidade in site.unidades %}
-      {% if unidade.title == page.unidade %}
-        <li data-cell="shrink"><a href="{{ site.baseurl }}{{ unidade.url }}">{{ unidade.title }}</a></li> 
-      {% endif %}
-    {% endfor %}
-  
-    <li data-cell="shrink"><a href="#">{{ page.nivel }} ▼</a></li>
-    <li data-cell="shrink"><a href="#">{{ page.serie }}º {{ page.turma }} ▼</a></li>
-  
-  </ul>
-</nav>
+{% include breadcrumbs.html %}
 
 <article class="post projeto">
 
@@ -56,8 +30,7 @@ layout: default
     {{ content }}
     {% assign midia = site.data[page_semestre].midia[page.url] %}
     {% if midia %}
-      {{ midia.description | markdownify }}
-      {% include /midia/{{ midia.tipo }}.html url = midia.url %}
+      {% include /midia/{{ midia.tipo }}.html data = midia %}
     {% else %}
       <div class="wrapper" data-grid="center spacing">
         <div data-cell="1of3">{% include svg/working-with-laptop.svg %}</div>

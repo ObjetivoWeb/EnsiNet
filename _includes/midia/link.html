@@ -1,2 +1,4 @@
 
-<p>Acesse o projeto <strong><a href="{{ include.url }}" target="_blank">{{ page.title }}</a></strong></p>
+{% if include.data.description %}{{ include.data.description | markdownify }}{% endif %}
+
+<p>Acesse o projeto <strong><a href="{{ include.data.url }}" target="_blank">{{ page.title }}</a></strong></p>
