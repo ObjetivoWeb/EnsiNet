@@ -1,6 +1,6 @@
 {% assign projeto = include.projeto %}
 
-{% assign nivel = site.data[page_semestre].niveis | where: 'title', projeto.nivel %}
+{% assign nivel = site.data.niveis | where: 'title', projeto.nivel %}
 
 <li data-turma="{{ nivel[0].tag }}{{ projeto.serie }}{{ projeto.turma }}">
 
