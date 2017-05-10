@@ -10,24 +10,22 @@
     {% endfor %}
 
     {% for area in site.areas %}
-      {% if area.title == page.area %}
+      {% if area.title == page.area or area.title == page.title %}
         <li data-cell="shrink"><a href="{{ site.baseurl }}{{ area.url }}">{{ area.title }}</a></li> 
       {% endif %}
     {% endfor %}
 
     {% for unidade in site.unidades %}
-      {% if unidade.title == page.unidade %}
+      {% if unidade.title == page.unidade or unidade.title == page.title %}
         <li data-cell="shrink"><a href="{{ site.baseurl }}{{ unidade.url }}">{{ unidade.title }}</a></li> 
       {% endif %}
     {% endfor %}
 
-    {% if page.nivel %}
-        <li data-cell="shrink"><a href="#">{{ page.nivel }} ▼</a></li>
-    {% endif %}
-
-    {% if page.serie && page.turma %}
-        <li data-cell="shrink"><a href="#">{{ page.serie }}º {{ page.turma }} ▼</a></li>
-    {% endif %}
+    <li data-cell="shrink" data-select="turmas">
+      {% if page.nivel && page.serie && page.turma %}
+        <a href="#">{{ page.nivel }} {{ page.serie }}º {{ page.turma }} ▼</a>
+      {% endif %}
+    </li>
 
   </ul>
 </nav>
