@@ -1,0 +1,14 @@
+---
+---
+---
+title: "{{ page["Matemática"] }}"
+area: "Matemática e suas tecnologias"
+equipe: "{{ page["Nome da equipe"] }}"
+integrantes: "{{ page["Integrantes"] }}"
+unidade: "{{ page["Unidade"] }}"
+nivel: "{{ page["Nível"] }}"
+serie: "{{ page["Série"] }}"
+turma: "{{ page["Turma"] }}"
+{% assign url_unidade = page["Unidade"] | slugify | sanitize_filename %}{% assign nivel = site.data.niveis | where: 'title', page["Nível"] %}
+permalink: projetos/{{ site.semestre }}/{{ url_unidade }}/{{ nivel[0].tag }}{{ page["Série"] }}{{ page["Turma"] }}/{{ page["name"] }}
+---

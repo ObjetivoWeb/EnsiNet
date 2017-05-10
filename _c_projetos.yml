@@ -1,0 +1,45 @@
+destination: _projetos
+exclude:
+  - _areas/**/*
+  - midia/**/*
+  - css/
+  - img/
+  - js/
+  - index.html
+  - "*.md"
+  - "*.ini"
+  - "*.log"
+  - "*.ico"
+  - "*.png"
+  - "*.js"
+semestre: 2017-1
+# page_gen-dirs: true # uncomment, if you prefer to generate named folders
+page_gen:
+
+  - data: 'projetos-2017-1'
+    template: 'pagegen-projeto-ciencias'
+    subfolders: ['Unidade', 'Nível', 'Série', 'Turma', 'Nome da equipe']
+    name_prefix: 'Ciências da natureza'
+    name: 'Ciências da natureza'
+    dir: '2017-1'
+
+  - data: 'projetos-2017-1'
+    template: 'pagegen-projeto-matematica'
+    subfolders: ['Unidade', 'Nível', 'Série', 'Turma', 'Nome da equipe']
+    name_prefix: 'Matemática'
+    name: 'Matemática'
+    dir: '2017-1'
+
+  - data: 'projetos-2017-1'
+    template: 'pagegen-projeto-humanas'
+    subfolders: ['Unidade', 'Nível', 'Série', 'Turma', 'Nome da equipe']
+    name_prefix: 'Humanas'
+    name: 'Humanas'
+    dir: '2017-1'
+
+  - data: 'projetos-2017-1'
+    template: 'pagegen-projeto-linguagens'
+    subfolders: ['Unidade', 'Nível', 'Série', 'Turma', 'Nome da equipe']
+    name_prefix: 'Linguagens e códigos'
+    name: 'Linguagens e códigos'
+    dir: '2017-1'

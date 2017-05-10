@@ -1,0 +1,22 @@
+destination: _unidades
+exclude:
+  - _areas/**/*
+  - midia/**/*
+  - css/
+  - img/
+  - js/
+  - index.html
+  - "*.md"
+  - "*.ini"
+  - "*.log"
+  - "*.ico"
+  - "*.png"
+  - "*.js"
+
+# page_gen-dirs: true # uncomment, if you prefer to generate named folders
+page_gen:
+
+  - data: 'projetos-2017-1'
+    template: 'pagegen-unidade'
+    name: 'Unidade'
+    dir: '2017-1'

@@ -8,6 +8,20 @@ var messages = {
 };
 var semestre = '2017-1';
 
+gulp.task('update-unidades', function (done) {
+    cp.exec('RMDIR "_unidades/'+semestre+'" /S /Q');
+    return cp.spawn(jekyll, ['build', '-c_c_unidades.yml'], {stdio: 'inherit'})
+        .on('close', done);
+});
+
+gulp.task('update-projetos', function (done) {
+    cp.exec('RMDIR "_projetos/'+semestre+'" /S /Q');
+    return cp.spawn(jekyll, ['build', '-c_c_projetos.yml'], {stdio: 'inherit'})
+        .on('close', done);
+});
+
+gulp.task('update-data', ['update-unidades', 'update-projetos']);
+
 /**
  * Build the Jekyll Site
  */
