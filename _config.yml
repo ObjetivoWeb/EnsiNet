@@ -9,6 +9,7 @@ description: >
 baseurl: "/EnsiNet"
 url: "http://objetivoweb.github.io"
 semestre: "2017-1"
+semestre_data: "projetos-2017-1"
 
 markdown: kramdown
 
