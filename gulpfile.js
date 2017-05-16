@@ -20,7 +20,10 @@ gulp.task('update-projetos', function (done) {
         .on('close', done);
 });
 
-gulp.task('update-data', ['update-unidades', 'update-projetos', 'jekyll-build']);
+gulp.task('update-data', ['update-unidades', 'update-projetos'], function (done) {
+    return cp.spawn(jekyll, ['build'], {stdio: 'inherit'})
+        .on('close', done);
+});
 
 /**
  * Build the Jekyll Site
