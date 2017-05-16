@@ -20,7 +20,7 @@ gulp.task('update-projetos', function (done) {
         .on('close', done);
 });
 
-gulp.task('update-data', ['update-unidades', 'update-projetos']);
+gulp.task('update-data', ['update-unidades', 'update-projetos', 'jekyll-build']);
 
 /**
  * Build the Jekyll Site
