@@ -200,15 +200,26 @@
                 padding-left: $spacing-unit * 2
 
 %lista-icone
-    max-width: 80px
     min-width: 80px
-    max-height: 80px
+    max-width: 80px
     min-height: 80px
+    max-height: 80px
     margin-right: 25px
+    +media-query($on-laptop)
+        min-width: 40px
+        max-width: 40px
+        min-height: 40px
+        max-height: 40px
+        margin-right: 10px
+
 .lista-unidades
+    +media-query($content-width)
+        font-size: $small-font-size
     .img-container
         @extend %lista-icone
 .lista-areas
+    +media-query($content-width)
+        font-size: $small-font-size
     .svg-container
         @extend %lista-icone
 

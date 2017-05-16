@@ -1,8 +1,8 @@
 <h3>Unidades</h3>
-<ul class="seamless">
+<ul class="seamless lista-unidades">
   {% for unidade in site.unidades %}{% assign crumbs = unidade.url | split: '/' %}
     {% if crumbs[2] == include.semestre %}
-      <li><a href="{{ site.baseurl }}{{ unidade.url }}" data-grid="center row nowrap spacing"><span data-block="table center circ" data-cell="1of4"><img src="{{ site.baseurl }}/img/unidades/{{ crumbs[3] | remove: '.html' }}.jpg" alt="{{ unidade.title }}"></span> <span data-cell="3of4">{{ unidade.title }}</span></a></li>
+      <li><a href="{{ site.baseurl }}{{ unidade.url }}" data-grid="center row nowrap spacing"><span data-block="table center circ" data-cell="1of4" class="img-container"><img src="{{ site.baseurl }}/img/unidades/{{ crumbs[3] | remove: '.html' }}.jpg" alt="{{ unidade.title }}"></span> <span data-cell="3of4">{{ unidade.title }}</span></a></li>
     {% endif %}
   {% endfor %}
 </ul>
