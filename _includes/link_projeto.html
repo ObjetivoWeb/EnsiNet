@@ -1,10 +1,11 @@
 {% assign projeto = include.projeto %}
-
+{% capture area_icone %}{% for area in site.areas %}{% if area.title == projeto.area %}{{ area.icone }}{% endif %}{% endfor %}{% endcapture %}
 {% assign nivel = site.data.niveis | where: 'title', projeto.nivel %}
 
 <li data-turma="{{ nivel[0].tag }}{{ projeto.serie }}{{ projeto.turma }}">
 
     <h2 class="post-link"><a href="{{ site.baseurl }}{{ projeto.url }}">{{ projeto.title }}</a></h2>
+    <p><small class="icon">{% include svg/{{ area_icone }}.svg %} {{ projeto.area }}</small></p>
     <p>Equipe <strong>{{ projeto.equipe }}</strong></p>
     <p class="post-meta" data-turma-label>{{ projeto.serie }}º ano {{ projeto.turma }} do Ensino {{ projeto.nivel }}</p>
 
