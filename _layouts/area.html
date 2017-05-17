@@ -29,8 +29,9 @@ layout: default
 </article>
 
 <nav class="page-content">
-  <div class="wrapper" data-grid="spacing">
-    <div data-cell="2of3">
+  <div class="wrapper large" data-grid="spacing">
+
+    <div data-cell="3of4">
       <h2>Projetos {{ page_semestre }}</h2>
       <ul class="seamless post-list">
         {% for projeto in site.projetos %}{% assign pro_crumbs = projeto.url | split: '/' %}
@@ -40,8 +41,10 @@ layout: default
         {% endfor %}
       </ul>
     </div>
-    <div data-cell="1of3">
+
+    <div data-cell="1of4">
       {% include menu_lateral.html semestre = page_semestre %}
     </div>
+
   </div>
 </nav>
