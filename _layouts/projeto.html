@@ -54,3 +54,8 @@ layout: default
     </div>
   </div>
 </div>
+
+<script>
+{% assign semestre_data = "projetos-" | append: page_semestre %}
+{% include data.js semestre_data = semestre_data %}
+</script>

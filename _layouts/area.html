@@ -33,7 +33,7 @@ layout: default
 
     <div data-cell="3of4">
       <h2>Projetos {{ page_semestre }}</h2>
-      <ul class="seamless post-list">
+      <ul class="seamless post-list" data-grid="cols-2 spacing">
         {% for projeto in site.projetos %}{% assign pro_crumbs = projeto.url | split: '/' %}
           {% if projeto.area == page.title and pro_crumbs[2] == page_semestre %}
             {% include link_projeto.html projeto = projeto %}
@@ -48,3 +48,8 @@ layout: default
 
   </div>
 </nav>
+
+<script>
+{% assign semestre_data = "projetos-" | append: page_semestre %}
+{% include data.js semestre_data = semestre_data %}
+</script>

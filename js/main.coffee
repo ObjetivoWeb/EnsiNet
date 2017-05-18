@@ -10,37 +10,33 @@ _ = (nodeList, fn) ->
 Element.prototype.prependChild = (child) ->
 	this.insertBefore child, this.firstChild
 
-areas = [{% for area in site.areas %}
-	{
-		title: '{{ area.title }}'
-		icone: '{{ area.icone }}'
-		content: '{{ area.content }}'
-		url: '{{ area.url }}'
-	}
-{% endfor %}]
+turmasControl = $( '.breadcrumbs [data-turma-id]' )[0]
+turmasLista = $( '.post-list' )[0]
 
-console.log areas
+Style = ->
+	s = document.createElement 'style'
+	$('head')[0].appendChild s
+	element: s
+	css: (css) ->
+		if s.styleSheet
+			s.styleSheet.cssText = css
+		else
+			s.innerHTML = css
+		@
 
-unidades = [{% for unidade in site.unidades %}
-	{
-		title: '{{ unidade.title }}'
-		content: '{{ unidade.content }}'
-		url: '{{ unidade.url }}'
-		turmas: { {% assign tags = "" | split: "" %}
-		{% for linha in site.data[site.semestre_data] order_by: 'Nível', 'Série', 'Turma' %}
+window.s = Style()
+# s.css [
+# 	'body { background: red }'
+# 	'p {font-size: .5em}'
+# 	].join ' '
 
-			{% if linha["Unidade"] == unidade.title %}
-				{% assign nivel = site.data.niveis | where: 'title', linha["Nível"] %}
-				{% assign tag_id = nivel[0].tag | append: linha["Série"] | append: linha["Turma"] %}
-				{% if tags contains tag_id %}{% continue %}{% endif %}{% assign tags = tags | push: tag_id %}
-
-			{{ tag_id }}: 'Ensino {{ linha["Nível"] }} {{ linha["Série"] }}º {{ linha["Turma"] }}'
-
-				{% endif %}
-
-		{% endfor %}
-		}
-	}
-{% endfor %}]
-
-console.log unidades
+if window.unidades
+	unidades.forEach (unidade) ->
+		console.groupCollapsed unidade.id
+		console.log unidade.title
+		console.log unidade.url
+		console.groupCollapsed 'Turmas'
+		for key, val of unidade.turmas
+			console.log key, ':', val
+		console.groupEnd 'Turmas'
+		console.groupEnd unidade.id
