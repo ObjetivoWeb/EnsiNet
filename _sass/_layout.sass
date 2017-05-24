@@ -135,21 +135,39 @@
 .page-breadcrumbs
     @extend %negativo
 
-    .breadcrumbs
-        margin-top: 0
+.breadcrumbs
+    margin-top: 0
+    margin-bottom: 0
+    li
         margin-bottom: 0
-        li
-            margin-bottom: 0
-            &:not(:last-child)
-                &:after
-                    content: '\232a'
-                    display: inline-block
-                    padding: 10px
+        position: relative
+        &:not(:last-child)
+            &:after
+                content: '\232a'
+                display: inline-block
+                padding: 10px
+    a
+        display: inline-block
+        padding: 10px
+        &:hover, &:focus, &:active
+            background-color: #000
+
+    .breadcrumbs-submenu
+        position: absolute
+        z-index: 999
+        min-width: 100%
+        border: 1px solid $grey-color-light
+        background-color: #fff
+        box-shadow: 0 5px 15px 0 rgba(black, .5)
+        display: none
+        &.active
+            display: block
+            animation: appear .5s ease-in-out forwards
         a
-            display: inline-block
-            padding: 10px
+            display: block
             &:hover, &:focus, &:active
-                background-color: #000
+                background-color: $grey-color-light
+                color: $brand-color
 
 @keyframes appear
     0%

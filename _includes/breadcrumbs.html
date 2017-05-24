@@ -23,7 +23,7 @@
 
     {% assign nivel = site.data.niveis | where: 'title', page.nivel %}
     {% assign tag_id = nivel[0].tag | append: page.serie | append: page.turma %}
-    <li data-cell="shrink" data-turma-id="{{ tag_id }}" data-btn-icon="▼"></li>
+    <li data-cell="shrink" data-unidade-id="/{{ page_semestre }}/{{ crumbs[3] | remove: '.html' }}" data-turma-id="{{ tag_id }}" data-btn-icon="▼"></li>
 
   </ul>
 </nav>
