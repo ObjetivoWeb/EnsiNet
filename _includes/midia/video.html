@@ -1,0 +1,5 @@
+{% capture url %}{% if include.data.url %}{{ include.data.url }}{% else %}{{ page.url | replace: 'projetos/', 'midia/' | replace: '.html', '.mp4' }}{% endif %}{% endcapture %}
+
+<div class="wrapper">
+    <video src="{{ url }}" width="100%" controls onclick="if(this.paused){this.play();}else{this.pause();}"></video>
+</div>
