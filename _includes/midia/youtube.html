@@ -1,0 +1,7 @@
+{% if include.data.description %}{{ include.data.description | markdownify }}{% endif %}
+
+<div class="wrapper">
+    <div class="video-container">{% assign url = include.data.url | replace: 'watch?v=', 'embed/' %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/c_qORDlfVrM?rel=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>

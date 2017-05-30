@@ -121,7 +121,15 @@ pre
         color: inherit
         path, rect, circle, polygon
             fill: currentcolor
-    
+
+.video-container
+    position: relative
+    height: 0
+    padding-bottom: 56.25%
+    object, iframe, embed, > *
+        position: absolute
+        width: 100%
+        height: 100%
 
 .icon
     @extend .svg-container
