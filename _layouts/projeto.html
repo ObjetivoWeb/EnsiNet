@@ -13,12 +13,12 @@ layout: default
   <header class="post-header page-content">
     <div class="wrapper large">
       <h1 class="post-title">{{ page.title }}</h1>
-      <div data-grid="spacing" class="wrapper post-meta">
-        <div data-cell="">
+      <div data-grid="spacing" class="post-meta">
+        <div data-cell="3of4">
           <h2><small class="post-meta-label">Equipe:</small> {{ page.equipe }}</h2>
           <h3><small class="post-meta-label">Área:</small> {{ page.area }}</h3>
         </div>
-        <div data-cell="">
+        <div data-cell="shrink">
           <p><small>Unidade</small> {{ page.unidade }} <br>{{ page.serie }}º ano {{ page.turma }} do Ensino {{ page.nivel }}</p>
           <p><small>Integrantes:</small> <br>{{ page.integrantes | replace: ',', '<br>' | replace: ' e ', '<br>' }}</p>
         </div>
@@ -30,6 +30,7 @@ layout: default
     {{ content }}
     {% assign midia = site.data[page_semestre].midia[page.url] %}
     {% if midia %}
+      {% if midia.description %}{{ midia.description | markdownify }}{% endif %}
       {% include /midia/{{ midia.tipo }}.html data = midia %}
     {% else %}
       <div class="wrapper" data-grid="center spacing">
