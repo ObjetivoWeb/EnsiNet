@@ -1,29 +1,26 @@
-<nav class="page-breadcrumbs">
-  
-  <ul class="wrapper large breadcrumbs" data-grid="row start wrap">
-  
-    {% for my_page in site.pages %}
-      {% assign my_page_name = my_page.name | remove: '.md' %}
-      {% if my_page_name == crumbs[2] %}
-        <li data-cell="shrink"><a href="{{ site.baseurl }}{{ my_page.url }}">{{ my_page.title }}</a></li> 
-      {% endif %}
-    {% endfor %}
+<ul class="wrapper large breadcrumbs" data-grid="row start wrap">
 
-    {% for area in site.areas %}
-      {% if area.title == page.area or area.title == page.title %}
-        <li data-cell="shrink"><a href="{{ site.baseurl }}{{ area.url }}">{{ area.title }}</a></li> 
-      {% endif %}
-    {% endfor %}
+  {% for my_page in site.pages %}
+    {% assign my_page_name = my_page.name | remove: '.md' %}
+    {% if my_page_name == crumbs[2] %}
+      <li data-cell="shrink"><a href="{{ site.baseurl }}{{ my_page.url }}">{{ my_page.title }}</a></li> 
+    {% endif %}
+  {% endfor %}
 
-    {% for unidade in site.unidades %}
-      {% if unidade.title == page.unidade or unidade.title == page.title %}
-        <li data-cell="shrink"><a href="{{ site.baseurl }}{{ unidade.url }}">{{ unidade.title }}</a></li> 
-      {% endif %}
-    {% endfor %}
+  {% for area in site.areas %}
+    {% if area.title == page.area or area.title == page.title %}
+      <li data-cell="shrink"><a href="{{ site.baseurl }}{{ area.url }}">{{ area.title }}</a></li> 
+    {% endif %}
+  {% endfor %}
 
-    {% assign nivel = site.data.niveis | where: 'title', page.nivel %}
-    {% assign tag_id = nivel[0].tag | append: page.serie | append: page.turma %}
-    <li data-cell="shrink" data-unidade-id="/{{ page_semestre }}/{{ crumbs[3] | remove: '.html' }}" data-turma-id="{{ tag_id }}" data-btn-icon="▼"></li>
+  {% for unidade in site.unidades %}
+    {% if unidade.title == page.unidade or unidade.title == page.title %}
+      <li data-cell="shrink"><a href="{{ site.baseurl }}{{ unidade.url }}">{{ unidade.title }}</a></li> 
+    {% endif %}
+  {% endfor %}
 
-  </ul>
-</nav>
+  {% assign nivel = site.data.niveis | where: 'title', page.nivel %}
+  {% assign tag_id = nivel[0].tag | append: page.serie | append: page.turma %}
+  <li data-cell="shrink" data-unidade-id="/{{ page_semestre }}/{{ crumbs[3] | remove: '.html' }}" data-turma-id="{{ tag_id }}" data-btn-icon="▼"></li>
+
+</ul>
